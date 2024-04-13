@@ -13,7 +13,7 @@ public class Ball : MonoBehaviour
     }
     private void Start()
     {
-        AddStartingForce();
+        ResetPosition();
     }
     private void AddStartingForce() 
     { 
@@ -27,5 +27,13 @@ public class Ball : MonoBehaviour
     public void AddForce(Vector2 force)
     {
         _rigidbody.AddForce(force);
+    }
+
+    public void ResetPosition()
+    {
+        _rigidbody.position = Vector3.zero;
+        _rigidbody.velocity = Vector3.zero;
+
+        AddStartingForce() ;
     }
 }
